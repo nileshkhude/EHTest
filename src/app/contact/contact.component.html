@@ -1,0 +1,46 @@
+<div class="example-container page_title">
+  Manage Contact Data
+</div>
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/contact-create']"><mat-icon>add</mat-icon></a>
+</div>
+<div class="example-container mat-elevation-z8">
+  <table mat-table #table [dataSource]="dataSource" *ngIf="contacts && contacts.length">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Title Column -->
+
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      <td mat-cell *matCellDef="let element" class="firstName-col"> {{element.firstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let element" class="lastName-col"> {{element.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element" class="email-col"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef> Phone </th>
+      <td mat-cell *matCellDef="let element" class="phone-col"> {{element.phone}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element" class="status-col"> {{element.status ? 'Active' : 'Inactive'}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/contact-details/', row._id]"></tr>
+  </table>
+  <div *ngIf="contacts && !contacts.length" class="no-contact">
+    No contacts avialable please add new contact.
+  </div>
+</div>

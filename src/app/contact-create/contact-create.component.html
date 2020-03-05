@@ -1,0 +1,40 @@
+<div class="example-container page_title">
+  Add New Contact
+</div>
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/contacts']"><mat-icon>list</mat-icon></a>
+</div>
+<form [formGroup]="contactForm" (ngSubmit)="onFormSubmit(contactForm.value)">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="First Name" formControlName="firstName"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!contactForm.get('firstName').valid && contactForm.get('firstName').touched">Please enter first name</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Last Name" formControlName="lastName"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!contactForm.get('lastName').valid && contactForm.get('lastName').touched">Please enter last name</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!contactForm.get('email').valid && contactForm.get('email').touched">Please enter email</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Phone" formControlName="phone"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!contactForm.get('phone').valid && contactForm.get('phone').touched">Please enter phone</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!contactForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

@@ -1,0 +1,25 @@
+.example-card {
+  max-width: 500px;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+.page_title{
+	text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    font-family: serif;
+}
+.data div{
+	display: flex;
+    margin: 1%;
+    padding: 1%;
+}
+.data dt, .data dd{
+	display: inline-block;
+	flex: 1;
+}
+.data dt:after{
+
+}
