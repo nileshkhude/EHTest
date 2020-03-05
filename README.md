@@ -22,9 +22,9 @@ You will need to have below tools installed on machine
 - Node
 - mongodb
 
-step 1: download or clone repo from https://github.com/nileshkhude/EHTest.git
-step 2: run npm install
-step 3: start mogodb server
-step 4: run npm start
-step 5: open localhost:3000
+- step 1: download or clone repo from https://github.com/nileshkhude/EHTest.git
+- step 2: run npm install
+- step 3: start mogodb server
+- step 4: run npm start
+- step 5: open localhost:3000
 
